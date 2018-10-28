@@ -5,6 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
 	<header class="entry-header page-header">
 
 		<?php 
@@ -21,14 +22,20 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<div>
+		<?php  the_content(); ?>
+		<div>		
 			Ticket Price: <?php echo get_post_meta($post->ID, 'Ticket Price', true); ?>
 			<br>
 			Release Date: <?php echo get_post_meta($post->ID, 'Release Date', true); ?>
 		</div>
-
-		<?php
+		
+		<?php 
+			//Display Taxonomies			
+			$terms = get_the_terms( $post->ID , 'types' );
+			foreach ($terms as $term){			
+				echo "<a type='button' class='btn btn-sm'>{$term->name}</a>";			
+			}
+		
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'unite' ),
 				'after'  => '</div>',

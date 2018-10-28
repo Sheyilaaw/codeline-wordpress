@@ -7,7 +7,17 @@ Version:		 1.0.0
 Text Domain:	 unite-child-theme
 */
 
+.entry-content a{	
+	margin-right: 5px;
+	background-color: #eaeaea;
+	color: #aeaeae;
+	border-color: #eaeaea;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-family: Dosis,Helvetica,Arial,sans-serif;
+	font-weight: 800;
+}
 
-/*
-    Add your custom styles here
-*/
+.entry-content a:hover{	
+	color: #54397E;
+}

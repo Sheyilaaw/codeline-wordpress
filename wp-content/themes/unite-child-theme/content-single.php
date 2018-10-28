@@ -32,8 +32,10 @@
 		<?php 
 			//Display Taxonomies			
 			$terms = get_the_terms( $post->ID , 'types' );
-			foreach ($terms as $term){			
-				echo "<a type='button' class='btn btn-sm'>{$term->name}</a>";			
+			foreach ($terms as $term){				
+				$url  = get_site_url();
+				
+				echo "<a href='{$url}/type/{$term->slug}' type='button' class='btn btn-sm'>{$term->name}</a>";			
 			}
 		
 			wp_link_pages( array(
